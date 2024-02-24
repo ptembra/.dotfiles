@@ -1,12 +1,12 @@
 git_check_modified_files(){
-  if $(git rev-parse --is-inside-work-tree) -eq 'true'; then
-    echo $(git ls-files -dmu | wc -l | xargs)
+  if [ $(git rev-parse --is-inside-work-tree 2&> /dev/null)='true' ]; then
+    echo $(git ls-files -dmu 2> /dev/null | wc -l &> /dev/null | xargs)
   fi
 }
 
 git_check_staged_files(){
-  if $(git rev-parse --is-inside-work-tree) -eq 'true'; then
-    echo $(git diff --cached --name-only | wc -l | xargs)
+  if [ $(git rev-parse --is-inside-work-tree 2&> /dev/null)='true' ]; then
+    echo $(git diff --cached --name-only | wc -l &> /dev/null | xargs)
   fi
 }
 
