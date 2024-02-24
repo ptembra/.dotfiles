@@ -54,5 +54,9 @@ export PATH=$PATH:$GOBIN
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 eval $(thefuck --alias)
+
+# styles VCS in prompt
+prompt_vcs_style
+
 # zprof
 
