@@ -1,8 +1,8 @@
 #--> ALIAS FILE <--#
 
 #CONFIGS
-alias zshconfig='nvim ~/.zshrc'
-alias vimconfig='cd ~/.config/nvim && nvim ~/.config/nvim/'
+alias zshconfig='cd ~/.dotfiles/zsh/ && nvim .'
+alias vimconfig='cd ~/.dotfiles/nvim/ && nvim .'
 
 #UTIL
 c-wav-mp3 () {
@@ -11,7 +11,8 @@ c-wav-mp3 () {
 
 #QOL
 #Default cmds
-alias l="lsd -la --color always"
+alias l="lsd -a --color always"
+alias ll="lsd -la --color always"
 alias ..="cd .."
 
 #git
