@@ -1,4 +1,6 @@
 return {
+  -- for nvim plugin development
+  { "folke/neodev.nvim", opts = {}, lazy = false },
   -- change trouble config
   {
     "folke/trouble.nvim",
@@ -35,10 +37,11 @@ return {
             "thumbs.db",
             "node_modules",
             "__pycache__",
+            "lua_modules",
           },
         },
       },
     },
   },
-  { "https://github.com/fladson/vim-kitty" },
+  -- { "https://github.com/fladson/vim-kitty" },
 }

@@ -11,8 +11,8 @@ c-wav-mp3 () {
 
 #QOL
 #Default cmds
-alias l="lsd -a --color always"
-alias ll="lsd -la --color always"
+alias l="lsd -la --color always"
+alias ll="lsd -a --color always"
 alias ..="cd .."
 
 #git

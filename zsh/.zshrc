@@ -1,3 +1,5 @@
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 #--> SETUP <--#
 
 # Profiler
@@ -57,6 +59,12 @@ eval $(thefuck --alias)
 
 # styles VCS in prompt
 prompt_vcs_style
+
+
+## LUAROCKS
+LUA_VERSION=$(lua -v | rg -o "\d+(?:\.\d+)")
+export LUA_PATH="$HOME/.luarocks/share/lua/$LUA_VERSION/?.lua"
+export LUA_CPATH="$HOME/.luarocks/lib/lua/$LUA_VERSION/?.so"
 
 # zprof
 
