@@ -14,9 +14,12 @@ require("mini.starter").setup({
 	}, "\n"),
 	query_updaters = [[abcdefghilmoqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMOQRSTUVWXYZ]],
 	items = {
-		{ action = "tab G", name = "G: Fugitive", section = "Git" },
-		{ action = "PackerSync", name = "U: Update Plugins", section = "Plugins" },
-		{ action = "enew", name = "E: New Buffer", section = "Builtin actions" },
-		{ action = "qall!", name = "Q: Quit Neovim", section = "Builtin actions" },
+		{ action = "Telescope find_files", name = "S: Find Files",              section = "Files" },
+		{ action = "Telescope oldfiles",  name = "R: Search Recent Files",     section = "Files" },
+		{ action = "Lazy sync",            name = "U: Update Plugins",          section = "Plugins" },
+		{ action = "MasonUpdate",          name = "M: Update Mason registries", section = "Plugins" },
+		{ action = "Neotree toggle",       name = "E: Toggle Neotree",          section = "Builtin actions" },
+		{ action = "ene | startinsert",    name = "N: New File",                section = "Builtin actions" },
+		{ action = "qall!",                name = "Q: Quit Neovim",             section = "Builtin actions" },
 	},
 })

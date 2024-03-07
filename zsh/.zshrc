@@ -1,15 +1,12 @@
 #--> SETUP <--#
-RPROMPT="Hello"
+
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 
 # Profiler
 # zmodload zsh/zprof
 # Load Plugins
 source $HOME/.dotfiles/zsh/plugins.zsh
-
-# Custom Prompt
-fpath=($HOME/.dotfiles/zsh/prompt/prompt_setup.zsh $fpath)
-source $HOME/.dotfiles/zsh/prompt/prompt_setup.zsh
-autoload -Uz prompt_setup && prompt_setup
 
 # Autocompletion
 autoload -U compinit; compinit
@@ -37,9 +34,6 @@ fi
 # AUTOJUMP
 # [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
-# styles VCS in prompt
-prompt_vcs_style
-
 # TODO: Defer NVM
 export NVM_DIR="$HOME/.nvm"
 zsh-defer -c '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"'  # This loads nvm
@@ -49,11 +43,18 @@ export GOBIN=~/go/bin
 export PATH=$PATH:$GOBIN
 # if [ "$TMUX" = "" ]; then tmux; fi
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 eval $(thefuck --alias)
 eval "$(rbenv init - zsh)"
 
 # zprof
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$HOME/.rbenv/versions/3.3.0/bin/ruby:$PATH"
+
+# --> Leave as last
+# Custom Prompt
+fpath=($HOME/.dotfiles/zsh/prompt/prompt_setup.zsh $fpath)
+source $HOME/.dotfiles/zsh/prompt/prompt_setup.zsh
+autoload -Uz prompt_setup && prompt_setup
+
+# styles VCS in prompt
+prompt_vcs_style
