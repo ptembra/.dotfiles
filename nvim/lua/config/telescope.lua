@@ -3,5 +3,12 @@ require("telescope").setup({
 		find_files = {
 			hidden = true
 		}
+	},
+	defaults = {
+		mappings = {
+			n = {
+				[":q<cr>"] = require("telescope.actions").delete_buffer,
+			},
+		},
 	}
 })
