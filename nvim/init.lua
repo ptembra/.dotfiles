@@ -2,7 +2,7 @@
 vim.g.mapleader = ' '
 vim.g.localmapleader = ' '
 
-plugins = require("plugins")
+local plugins = require("plugins")
 
 vim.lsp.set_log_level("debug")
 -- Bootstrap lazy

@@ -1,4 +1,5 @@
 #--> SETUP <--#
+RPROMPT="Hello"
 
 # Profiler
 # zmodload zsh/zprof
@@ -36,6 +37,9 @@ fi
 # AUTOJUMP
 # [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
+# styles VCS in prompt
+prompt_vcs_style
+
 # TODO: Defer NVM
 export NVM_DIR="$HOME/.nvm"
 zsh-defer -c '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"'  # This loads nvm
@@ -49,9 +53,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 eval $(thefuck --alias)
 eval "$(rbenv init - zsh)"
-
-# styles VCS in prompt
-prompt_vcs_style
 
 # zprof
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

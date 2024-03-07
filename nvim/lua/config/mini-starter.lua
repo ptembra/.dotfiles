@@ -20,13 +20,3 @@ require("mini.starter").setup({
 		{ action = "qall!", name = "Q: Quit Neovim", section = "Builtin actions" },
 	},
 })
-
-vim.cmd([[
-  augroup MiniStarterJK
-    au!
-    au User MiniStarterOpened nmap <buffer> j <Cmd>lua MiniStarter.update_current_item('next')<CR>
-    au User MiniStarterOpened nmap <buffer> k <Cmd>lua MiniStarter.update_current_item('prev')<CR>
-    au User MiniStarterOpened nmap <buffer> <C-p> <Cmd>Telescope find_files<CR>
-    au User MiniStarterOpened nmap <buffer> <C-n> <Cmd>Telescope file_browser<CR>
-  augroup END
-]])

@@ -29,5 +29,5 @@ prompt_vcs_style(){
 setopt PROMPT_SUBST
 prompt_setup() {
 	PROMPT="[%F{14}%n@%m%f | %F{12}%3~%f] %(?.%F{green}.%F{red})→%f "
-  	RPROMPT='$vcs_info_msg_0_'
+	RPROMPT='$vcs_info_msg_0_'
 }
