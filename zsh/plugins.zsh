@@ -14,4 +14,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Loads ZSH-auto-suggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
+
+source ~/.dotfiles/zsh/plugins/zsh-defer/zsh-defer.plugin.zsh

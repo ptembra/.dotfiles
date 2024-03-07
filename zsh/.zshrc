@@ -1,15 +1,7 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 #--> SETUP <--#
 
 # Profiler
 # zmodload zsh/zprof
-
-#--> HOMEBREW
-# Add Homebrew's executable directory to the front of the PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-
 # Load Plugins
 source $HOME/.dotfiles/zsh/plugins.zsh
 
@@ -45,8 +37,8 @@ fi
 # [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # TODO: Defer NVM
-# export NVM_DIR="$HOME/.nvm"
-#   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+zsh-defer -c '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"'  # This loads nvm
 
 
 export GOBIN=~/go/bin
@@ -56,15 +48,11 @@ export PATH=$PATH:$GOBIN
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 eval $(thefuck --alias)
+eval "$(rbenv init - zsh)"
 
 # styles VCS in prompt
 prompt_vcs_style
 
-
-## LUAROCKS
-LUA_VERSION=$(lua -v | rg -o "\d+(?:\.\d+)")
-export LUA_PATH="$HOME/.luarocks/share/lua/$LUA_VERSION/?.lua"
-export LUA_CPATH="$HOME/.luarocks/lib/lua/$LUA_VERSION/?.so"
-
 # zprof
-
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$HOME/.rbenv/versions/3.3.0/bin/ruby:$PATH"
