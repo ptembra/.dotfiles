@@ -4,9 +4,8 @@ vim.g.localmapleader = ' '
 
 local plugins = require("plugins")
 
-vim.lsp.set_log_level("debug")
 -- Bootstrap lazy
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim", "couldn't load lazy"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -54,8 +53,13 @@ vim.o.winblend = 10
 vim.o.pumblend = 10
 vim.o.relativenumber = true
 
--- NeoDev
-require("neodev").setup()
+require("neodev").setup({
+	pathStrict = false,
+	override = function(root_dir, library)
+		library.enabled = true
+		library.plugins = true
+	end
+})
 
 -- LSP Configs
 require("lspconfig").lua_ls.setup({
@@ -67,3 +71,5 @@ require("lspconfig").lua_ls.setup({
 		}
 	}
 })
+
+require("concur").setup({username="Pedro"})

@@ -32,3 +32,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = augroup("ruby_autocomplete"),
+	pattern = {
+		"ruby",
+		"eruby"
+	},
+	callback = function()
+		vim.g.rubycomplete_buffer_loading = 1
+		vim.g.rubycomplete_classes_in_global = 1
+	end
+})

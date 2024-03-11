@@ -15,11 +15,11 @@ require("mini.starter").setup({
 	query_updaters = [[abcdefghilmoqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMOQRSTUVWXYZ]],
 	items = {
 		{ action = "Telescope find_files", name = "S: Find Files",              section = "Files" },
-		{ action = "Telescope oldfiles",  name = "R: Search Recent Files",     section = "Files" },
+		{ action = "Telescope oldfiles",   name = "R: Search Recent Files",     section = "Files" },
 		{ action = "Lazy sync",            name = "U: Update Plugins",          section = "Plugins" },
 		{ action = "MasonUpdate",          name = "M: Update Mason registries", section = "Plugins" },
 		{ action = "Neotree toggle",       name = "E: Toggle Neotree",          section = "Builtin actions" },
-		{ action = "ene | startinsert",    name = "N: New File",                section = "Builtin actions" },
+		{ action = "enew | startinsert",   name = "F: New File",                section = "Builtin actions" },
 		{ action = "qall!",                name = "Q: Quit Neovim",             section = "Builtin actions" },
 	},
 })

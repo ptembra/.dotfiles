@@ -7,9 +7,10 @@ local mappings = {
 	["<Tab>"] = { "<cmd>bnext<cr>", "Next buffer" },
 	["ps"] = { "<cmd>Telescope find_files<cr>", "Path Search" },
 	["s"] = {
-		name = "Search",
+		name = "search",
 		["h"] = { "<cmd>Telescope help_tags<cr>", "Search help menu" },
 		["b"] = { "<cmd>Telescope buffers<cr>", "Search buffers" },
+		["r"] = {"<cmd> Telescope oldfiles", "Search recently opened files" }
 	},
 	["b"] = {
 		name = "buffers",
@@ -26,6 +27,11 @@ local mappings = {
 		name = "lsp",
 		["f"] = { function() vim.lsp.buf.format() end, "Format buffer" },
 		["r"] = { function() vim.lsp.buf.rename() end, "Rename definition" }
+	},
+	["t"] = {
+		name = "terminal",
+		["/"] = {"<cmd>ToggleTerm direction=horizontal<cr>", "Toggle horizontal terminal"},
+		["f"] = {"<cmd>ToggleTerm direction=float<cr>", "Toggle floating terminal"}
 	}
 }
 

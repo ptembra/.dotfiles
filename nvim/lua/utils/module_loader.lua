@@ -32,7 +32,8 @@ function M.load_directory(dir, base, exclude)
 			local nested_handle = vim.loop.fs_scandir(dir .. "/" .. name)
 
 			if not nested_handle then
-				error("Can't load nested directory" .. nested_dir)
+				print("Can't load nested directory" .. nested_dir)
+				goto continue
 			end
 
 			while nested_handle do
@@ -47,11 +48,11 @@ function M.load_directory(dir, base, exclude)
 
 				if (nested_file_extension == "lua" and nested_type == "file") and not exc[nested_file_root] then
 					local success, response = pcall(require, base .. file_root .. "." .. nested_file_root)
-
 					if success then
 						table.insert(mods, response)
 					else
-						print("Couldn't load nested module " .. nested_file_root .. ": " .. response)
+						print("Couldn't load nested module " .. nested_file_root .. ": " .. vim.inspect(response))
+						goto continue
 					end
 				end
 			end
@@ -67,7 +68,9 @@ function M.load_directory(dir, base, exclude)
 				end
 			end
 		end
+		::continue::
 	end
+
 	return mods
 end
 
