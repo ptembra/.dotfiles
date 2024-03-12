@@ -1,1 +1,1 @@
-require("lspconfig").astro.setup{}
+require("lspconfig").astro.setup({})

@@ -53,23 +53,4 @@ vim.o.winblend = 10
 vim.o.pumblend = 10
 vim.o.relativenumber = true
 
-require("neodev").setup({
-	pathStrict = false,
-	override = function(root_dir, library)
-		library.enabled = true
-		library.plugins = true
-	end
-})
-
--- LSP Configs
-require("lspconfig").lua_ls.setup({
-	settings = {
-		Lua = {
-			completion = {
-				callSnippet = "Replace"
-			}
-		}
-	}
-})
-
 require("concur").setup({username="Pedro"})
