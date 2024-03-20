@@ -44,3 +44,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.g.rubycomplete_classes_in_global = 1
 	end
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = augroup("format_on_save"),
+	pattern = "*",
+	callback = function()
+		vim.lsp.buf.format({ async = true })
+	end,
+})

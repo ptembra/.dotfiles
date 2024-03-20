@@ -53,4 +53,6 @@ vim.o.winblend = 10
 vim.o.pumblend = 10
 vim.o.relativenumber = true
 
-require("concur").setup({username="Pedro"})
+-- Disable netrw
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1

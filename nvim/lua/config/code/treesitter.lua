@@ -7,6 +7,13 @@ require("nvim-treesitter.configs").setup({
 		"typescript",
 		"tsx",
 		"ruby",
-		"lua"
+		"lua",
+		"javascript"
 	},
+	auto_install = true,
+	sync_install = false,
+	modules = {
+		-- Modules here
+	},
+	ignore_install = {},
 })

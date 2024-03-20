@@ -5,6 +5,9 @@ require("lspconfig").lua_ls.setup(
 				completion = {
 					callSnippet = "Replace"
 				},
+				codeLens = {
+					enable = true,
+				},
 				diagnostics = {
 					globals = { "vim" }
 				}

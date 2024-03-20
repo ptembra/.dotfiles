@@ -1,8 +1,8 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
 	version = false,
+	lazy = false,
 	build = ':TSUpdate',
-	event = { "VeryLazy" },
 	opts = {
 		highlight = { enable = true },
 		indent = { enable = true },
