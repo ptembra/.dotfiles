@@ -45,8 +45,8 @@ export PATH=$PATH:$GOBIN
 
 eval $(thefuck --alias)
 eval "$(rbenv init - zsh)"
+eval "$(fzf --zsh)"
 
-# zprof
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$HOME/.rbenv/versions/3.3.0/bin/ruby:$PATH"
 
