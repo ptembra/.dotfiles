@@ -1,1 +1,0 @@
-vim.g.completeopt = "longest"

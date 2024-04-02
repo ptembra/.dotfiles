@@ -1,5 +1,4 @@
 #--> SETUP <--#
-
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
@@ -11,12 +10,6 @@ source $HOME/.dotfiles/zsh/plugins.zsh
 # Autocompletion
 autoload -U compinit; compinit
 source ~/.dotfiles/zsh/completion.zsh
-
-#--> OH MY ZSH SETUP <--#
-
-# export ZSH=$HOME/.oh-my-zsh
-# ZSH_THEME="robbyrussell"
-# source $ZSH/oh-my-zsh.sh
 
 # ALIASES
 source $HOME/.dotfiles/zsh/zsh_aliases.zsh
@@ -31,13 +24,9 @@ else
   export EDITOR='nvim'
 fi
 
-# AUTOJUMP
-# [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-
 # TODO: Defer NVM
 export NVM_DIR="$HOME/.nvm"
 zsh-defer -c '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"'  # This loads nvm
-
 
 export GOBIN=~/go/bin
 export PATH=$PATH:$GOBIN
@@ -58,3 +47,11 @@ autoload -Uz prompt_setup && prompt_setup
 
 # styles VCS in prompt
 prompt_vcs_style
+
+# pnpm
+export PNPM_HOME="/Users/pedro/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
