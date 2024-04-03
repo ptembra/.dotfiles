@@ -4,12 +4,12 @@ export PATH="/opt/homebrew/sbin:$PATH"
 
 # Profiler
 # zmodload zsh/zprof
-# Load Plugins
-source $HOME/.dotfiles/zsh/plugins.zsh
 
 # Autocompletion
-autoload -U compinit; compinit
 source ~/.dotfiles/zsh/completion.zsh
+
+# Load Plugins
+source $HOME/.dotfiles/zsh/plugins.zsh
 
 # ALIASES
 source $HOME/.dotfiles/zsh/zsh_aliases.zsh
