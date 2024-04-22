@@ -6,7 +6,7 @@ harpoon:setup {}
 wk.register({
 	['a'] = {
 		function()
-			harpoon:list():append()
+			harpoon:list():add()
 		end,
 		'Harpoon Add',
 	},

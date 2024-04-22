@@ -1,8 +1,8 @@
 #--> ALIAS FILE <--#
 
 #CONFIGS
-alias zshconfig='cd ~/.dotfiles/zsh/ && nvim .'
-alias vimconfig='cd ~/.dotfiles/nvim/ && nvim .'
+alias zshconfig='cd ~/.dotfiles/zsh/ && nvim'
+alias vimconfig='cd ~/.dotfiles/nvim/ && nvim'
 
 #UTIL
 c-wav-mp3 () {

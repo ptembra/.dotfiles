@@ -48,6 +48,13 @@ autoload -Uz prompt_setup && prompt_setup
 # styles VCS in prompt
 prompt_vcs_style
 
+
+# Python VENV path
+# check for VENV in home folder
+if [ -d "$HOME/.venv" ]; then
+    export PATH="$HOME/.venv/bin:$PATH"
+fi
+
 # pnpm
 export PNPM_HOME="/Users/pedro/Library/pnpm"
 case ":$PATH:" in
@@ -55,3 +62,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Created by `pipx` on 2024-04-06 00:22:01
+export PATH="$PATH:/Users/pedro/.local/bin"
