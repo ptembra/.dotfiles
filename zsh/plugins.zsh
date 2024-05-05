@@ -13,4 +13,3 @@ colors
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source ~/.dotfiles/zsh/plugins/zsh-defer/zsh-defer.plugin.zsh
-

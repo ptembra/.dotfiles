@@ -192,12 +192,14 @@ require('lazy').setup({
         -- `build` is used to run some command when the plugin is installed/updated.
         -- This is only run then, not every time Neovim starts up.
         build = 'make',
-
         -- `cond` is a condition used to determine whether this plugin should be
         -- installed and loaded.
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
+        -- cond = function()
+        --   return vim.fn.executable 'make' == 1
+        -- end,
+        config = function()
+          require("telescope").load_extension("fzf")
+        end
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
@@ -219,11 +221,18 @@ require('lazy').setup({
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+          }
         },
       }
 
       -- Enable Telescope extensions if they are installed
-      pcall(require('telescope').load_extension, 'fzf')
+      require("telescope").load_extension("fzf")
+      print("Telescope FZF loaded?")
       pcall(require('telescope').load_extension, 'ui-select')
 
       -- It's also possible to pass additional configuration options.

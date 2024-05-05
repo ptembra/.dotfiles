@@ -10,7 +10,6 @@ git_check_modified_files(){
   fi
 }
 
-
 add-zsh-hook precmd git_check_modified_files
 add-zsh-hook precmd git_check_staged_files
 
@@ -26,8 +25,14 @@ prompt_vcs_style(){
   zstyle ':vcs_info:git*' actionformats "[${git_base} %{$fg[magenta]%}⌘ %a%{$reset_color%}]"
 }
 
+tmux_indicator(){
+  if ! [[ $TMUX ]]; then
+    echo "%F{red}%f "
+  fi
+}
+
 set -o PROMPT_SUBST
 prompt_setup() {
-	PROMPT='[%F{14}%n@%m%f | %F{12}%3~%f] %(?.%F{green}.%F{red})→%f '
-	RPROMPT='$vcs_info_msg_0_'
+  PROMPT='$(tmux_indicator)[%F{14}%n@%m%f | %F{12}%3~%f] %(?.%F{green}.%F{red})→%f '
+  RPROMPT='$vcs_info_msg_0_'
 }
