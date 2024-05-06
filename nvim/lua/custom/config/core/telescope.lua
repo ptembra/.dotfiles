@@ -5,11 +5,11 @@ require("telescope").setup({
 		}
 	},
 	defaults = {
-		mappings = {
-			n = {
-				[":q<cr>"] = require("telescope.actions").delete_buffer,
-			},
-		},
+		-- mappings = {
+		-- 	n = {
+		-- 		[":q<cr>"] = require("telescope.actions").delete_buffer,
+		-- 	},
+		-- },
 	},
 	extensions = {
 		fzf = {

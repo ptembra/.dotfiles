@@ -40,7 +40,17 @@ local function header()
 		minute = "0" .. minute
 	end
 
-	local greet = "Good " .. currentGreet() .. ", Pedro! It is " .. hour .. ":" .. minute
+	local function getUsername()
+		local username = os.getenv("USER")
+		if username then
+			return (username:gsub("^%l", string.upper))
+		else
+			return "User"
+		end
+	end
+
+	local greet = "Good " ..
+			currentGreet() .. " " .. getUsername() .. ", It is " .. hour .. ":" .. minute
 	local msg = {
 		hydraASCII,
 		greet

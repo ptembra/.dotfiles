@@ -91,7 +91,7 @@ vim.opt.hlsearch = true
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
---
+
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
@@ -160,6 +160,23 @@ require('lazy').setup({
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+
+      signcolumn = true,
+      numhl = true,
+      linehl = false,
+      word_diff = false,
+      watch_gitdir = {
+        interval = 1000,
+        follow_files = true,
+      },
+      attach_to_untracked = true,
+      current_line_blame = true,
+      current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+        delay = 1000,
+        ignore_whitespace = false,
+      }
     },
   },
 
@@ -231,8 +248,7 @@ require('lazy').setup({
       }
 
       -- Enable Telescope extensions if they are installed
-      require("telescope").load_extension("fzf")
-      print("Telescope FZF loaded?")
+      pcall(require("telescope").load_extension, "fzf")
       pcall(require('telescope').load_extension, 'ui-select')
 
       -- It's also possible to pass additional configuration options.
