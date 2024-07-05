@@ -4,6 +4,10 @@
 
 export PATH=Users/pedro/.rbenv/shims:$PATH
 
+export ERL_AFLAGS="-kernel shell_history enabled"
+# Deno CLI paths
+export PATH=$HOME/.deno/bin:$PATH
+
 export PATH=/usr/local/bin:$PATH
 export PATH=~/bin:$PATH
 

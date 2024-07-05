@@ -26,17 +26,6 @@ local mappings = {
 		end,
 		'Soft Quit Buffer',
 	},
-	['s'] = {
-		name = '[S]earch',
-		['h'] = { '<cmd>Telescope help_tags<cr>', 'Search help menu' },
-		['b'] = { '<cmd>Telescope buffers<cr>', 'Search buffers' },
-		['r'] = { '<cmd> Telescope oldfiles', 'Search recently opened files' },
-		['g'] = { '<cmd>Telescope live_grep<cr>', 'Search with grep' },
-		['f'] = { '<cmd>Telescope find_files<cr>', 'Search files' },
-		['c'] = { '<cmd>Telescope commands<cr>', 'Search commands' },
-		['s'] = { '<cmd>Telescope grep_string<cr>', 'Search with grep' },
-		['k'] = { '<cmd>Telescope keymaps<cr>', 'Search keymaps' },
-	},
 	['b'] = {
 		name = '[B]uffers',
 		['q'] = { '<cmd>q!<cr>', 'Force close buffer' },
@@ -47,12 +36,12 @@ local mappings = {
 	['u'] = {
 		name = '[U]tils',
 		['r'] = { '<cmd>nohl<cr>', 'Clear highlights' },
-		['n'] = {
-			function()
-				require('notify').dismiss { silent = true, pending = true }
-			end,
-			'Dismiss notifications',
-		},
+		-- ['n'] = {
+		-- 	function()
+		-- 		require('notify').dismiss { silent = true, pending = true }
+		-- 	end,
+		-- 	'Dismiss notifications',
+		-- },
 	},
 	['l'] = {
 		name = '[L]sp',
@@ -82,9 +71,15 @@ local mappings = {
 		}
 	},
 	['t'] = {
-		name = '[T]erminal',
-		['/'] = { '<cmd>ToggleTerm direction=horizontal<cr>', 'Toggle horizontal terminal' },
-		['f'] = { '<cmd>ToggleTerm direction=float<cr>', 'Toggle floating terminal' },
+		name = '[T]elescope',
+		['h'] = { '<cmd>Telescope help_tags<cr>', 'Search help menu' },
+		['b'] = { '<cmd>Telescope buffers<cr>', 'Search buffers' },
+		['r'] = { '<cmd> Telescope oldfiles', 'Search recently opened files' },
+		['g'] = { '<cmd>Telescope live_grep<cr>', 'Search with grep' },
+		['f'] = { '<cmd>Telescope find_files<cr>', 'Search files' },
+		['c'] = { '<cmd>Telescope commands<cr>', 'Search commands' },
+		['s'] = { '<cmd>Telescope grep_string<cr>', 'Search with grep' },
+		['k'] = { '<cmd>Telescope keymaps<cr>', 'Search keymaps' },
 	},
 }
 

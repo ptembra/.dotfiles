@@ -1,12 +1,14 @@
 zmodload zsh/complist
 
+source $(fzf --zsh) &> /dev/null
+
 # Brew completions
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
-fpath=($HOME/.dotfiles/zsh/plugins/zsh-completions/src $fpath)
+# source $(fabric completions zsh)
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
@@ -15,7 +17,7 @@ setopt complete_in_word
 setopt always_to_end
 
 # ZSH FZF
-source ~/.dotfiles/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+source ~/.antigen/bundles/Aloxaf/fzf-tab/fzf-tab.plugin.zsh 
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -36,8 +38,13 @@ zstyle ':fzf-tab:complete:cp:*' fzf-preview 'lsd -1 --color=always $realpath'
 
 zstyle ':fzf-tab:complete:mv:*' fzf-preview 'lsd -1 --color=always $realpath'
 
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'lsd -1 --color=always $realpath'
+
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
+
+# tmux popup
+# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 bindkey -M menuselect '^o' accept-and-infer-next-history
 zstyle ':completion:*:*:*:default' menu select

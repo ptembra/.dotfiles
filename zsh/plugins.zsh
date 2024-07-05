@@ -6,10 +6,15 @@ add-zsh-hook precmd vcs_info
 autoload colors
 colors
 
-## Loads Autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-
-## Loads ZSH-syntax-highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Loads Zoxide
+eval "$(zoxide init zsh)"
 
 source ~/.dotfiles/zsh/plugins/zsh-defer/zsh-defer.plugin.zsh
+
+export ANTIGEN_LOG="$HOME/.dotfiles/zsh/antigen.log"
+source $(brew --prefix)/share/antigen/antigen.zsh
+
+antigen bundle Aloxaf/fzf-tab
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply

@@ -50,7 +50,7 @@ local function header()
 	end
 
 	local greet = "Good " ..
-			currentGreet() .. " " .. getUsername() .. ", It is " .. hour .. ":" .. minute
+			currentGreet() .. ", " .. getUsername() .. ". It is " .. hour .. ":" .. minute
 	local msg = {
 		hydraASCII,
 		greet

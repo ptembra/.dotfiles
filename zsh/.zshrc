@@ -2,11 +2,17 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
+if [ -z "$TMUX" ]; then
+    tmux attach -t main || tmux new -s main
+fi
+
+source $HOME/.dotfiles/zsh/zsh_init.zsh
+
 # Profiler
 # zmodload zsh/zprof
 
 # Autocompletion
-source ~/.dotfiles/zsh/completion.zsh
+source $HOME/.dotfiles/zsh/completion.zsh
 
 # Load Plugins
 source $HOME/.dotfiles/zsh/plugins.zsh
@@ -24,13 +30,12 @@ else
   export EDITOR='nvim'
 fi
 
-# TODO: Defer NVM
+# Defers NVM loading
 export NVM_DIR="$HOME/.nvm"
 zsh-defer -c '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"'  # This loads nvm
 
 export GOBIN=~/go/bin
 export PATH=$PATH:$GOBIN
-# if [ "$TMUX" = "" ]; then tmux; fi
 
 eval $(thefuck --alias)
 eval "$(rbenv init - zsh)"

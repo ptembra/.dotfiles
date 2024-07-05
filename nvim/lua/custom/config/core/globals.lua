@@ -1,1 +1,1 @@
-vim.o.astro_typescript = 'enable'
+-- vim.o.astro_typescript = 'enable'
