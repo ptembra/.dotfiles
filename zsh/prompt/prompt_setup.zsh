@@ -31,8 +31,22 @@ tmux_indicator(){
   fi
 }
 
+_prompt_str="$(tmux_indicator)[%F{14}%n@%m%f | %F{12}%8~%f] %(?.%F{green}.%F{red})→%f "
+
+collapse_prompt_on_enter(){
+  PROMPT="[%F{14}%n@%m%f | %F{12}%1~%f] %(?.%F{green}.%F{red})→%f "
+  RPROMPT=""
+  zle reset-prompt
+  PROMPT="$_prompt_str"
+  RPROMPT="$vcs_info_msg_0_"
+  zle accept-line
+}
+
 set -o PROMPT_SUBST
 prompt_setup() {
-  PROMPT='$(tmux_indicator)[%F{14}%n@%m%f | %F{12}%3~%f] %(?.%F{green}.%F{red})→%f '
+  zle -N collapse_prompt_on_enter
+  bindkey "^M" collapse_prompt_on_enter
+
+  PROMPT='$_prompt_str'
   RPROMPT='$vcs_info_msg_0_'
 }
