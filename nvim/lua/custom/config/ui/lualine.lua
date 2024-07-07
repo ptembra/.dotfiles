@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 require("lualine").setup(
   {
     options = {
-      theme = 'gruvbox'
+      theme = 'everforest'
     },
     sections = {
       lualine_b = {

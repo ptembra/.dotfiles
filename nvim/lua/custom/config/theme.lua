@@ -1,3 +1,3 @@
 vim.o.background = "dark"
 -- vim.cmd.colorscheme("gruvbox")
-vim.cmd.colorscheme("kanagawa")
+vim.cmd.colorscheme("everforest")
