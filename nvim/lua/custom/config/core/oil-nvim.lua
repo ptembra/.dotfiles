@@ -1,34 +1,24 @@
 require("oil").setup()
 require("oil").toggle_hidden()
 
-require("which-key").register({
-		["o"] = {
-			"<cmd>Oil<CR>", "Open parent directory",
-		}
-	},
+require('which-key').add(
 	{
-		mode = 'n',
-		prefix = '<leader>',
-		buffer = nil,
-		silent = true,
-		noremap = true,
-		nowait = true,
+		{ "<leader>o", "<cmd>Oil<CR>", desc = "Open parent directory", nowait = true, remap = false },
 	}
 )
 
-require("which-key").register({
-	["h"] = {
+require("which-key").add(
+	{
+		"<leader>h",
 		function()
 			if vim.bo.filetype == "oil" then
 				require("oil").toggle_hidden()
 			end
-		end, "which_key_ignore"
+		end,
+		mode = "n",
+		noremap = true,
+		nowait = true,
+		silent = true,
+		hidden = true
 	}
-}, {
-	mode = 'n',
-	prefix = '<leader>',
-	buffer = nil,
-	silent = true,
-	noremap = true,
-	nowait = true,
-})
+)

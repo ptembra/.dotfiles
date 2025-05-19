@@ -11,9 +11,6 @@ source $HOME/.dotfiles/zsh/zsh_init.zsh
 # Profiler
 # zmodload zsh/zprof
 
-# Autocompletion
-source $HOME/.dotfiles/zsh/completion.zsh
-
 # Load Plugins
 source $HOME/.dotfiles/zsh/plugins.zsh
 
@@ -44,15 +41,9 @@ eval "$(fzf --zsh)"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$HOME/.rbenv/versions/3.3.0/bin/ruby:$PATH"
 
-# --> Leave as last
-# Custom Prompt
-fpath=($HOME/.dotfiles/zsh/prompt/prompt_setup.zsh $fpath)
-source $HOME/.dotfiles/zsh/prompt/prompt_setup.zsh
-autoload -Uz prompt_setup && prompt_setup
-
-# styles VCS in prompt
-prompt_vcs_style
-
+# Autocompletion
+source $HOME/.dotfiles/zsh/completion.zsh
+eval "$(ov --completion zsh)"
 
 # Python VENV path
 # check for VENV in home folder
@@ -70,3 +61,17 @@ esac
 
 # Created by `pipx` on 2024-04-06 00:22:01
 export PATH="$PATH:/Users/pedro/.local/bin"
+
+# MATLAB Cli
+alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab -nojvm -nodesktop"
+
+
+# --> Leave as last
+# Custom Prompt
+fpath=($HOME/.dotfiles/zsh/prompt/prompt_setup.zsh $fpath)
+source $HOME/.dotfiles/zsh/prompt/prompt_setup.zsh
+autoload -Uz prompt_setup && prompt_setup
+
+# styles VCS in prompt
+prompt_vcs_style
+

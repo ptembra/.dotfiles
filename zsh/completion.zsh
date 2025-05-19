@@ -17,7 +17,7 @@ setopt complete_in_word
 setopt always_to_end
 
 # ZSH FZF
-source ~/.antigen/bundles/Aloxaf/fzf-tab/fzf-tab.plugin.zsh 
+source ~/.antigen/bundles/Aloxaf/fzf-tab/fzf-tab.plugin.zsh
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -51,3 +51,5 @@ zstyle ':completion:*:*:*:default' menu select
 
 autoload -Uz compinit; compinit
 compinit -u 
+
+eval "$(ov --completion zsh)"

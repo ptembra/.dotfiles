@@ -1,18 +1,8 @@
 require("aerial").setup()
 
-require("which-key").register(
+require('which-key').add(
 	{
-		["a"] = { "<cmd>AerialToggle!<CR>", "Toggle Aerial" },
-		-- ["{"] = { "<cmd>AerialPrev<CR>", "Previous Symbol" },
-		-- ["}"] = { "<cmd>AerialNext<CR>", "Next Symbol" },
-	}
-	, {
-		mode = 'n',
-		prefix = '<leader>',
-		buffer = nil,
-		silent = true,
-		noremap = true,
-		nowait = true,
+		{ "<leader>a", "<cmd>AerialToggle!<CR>", desc = "Toggle Aerial", nowait = true, remap = false },
 	}
 )
 

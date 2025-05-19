@@ -1,5 +1,12 @@
 local M = {}
 
+local function tableLength(T)
+	print("Inside table len: " .. vim.inspect(T) .. " " .. type(T))
+	local count = 0
+	for _ in pairs(T) do count = count + 1 end
+	return count
+end
+
 function M.load_directory(dir, base, exclude)
 	local exc = exclude or {}
 
@@ -64,7 +71,7 @@ function M.load_directory(dir, base, exclude)
 				if success then
 					table.insert(mods, response)
 				else
-					print("Couldn't load module " .. file_root .. ": " .. response)
+					print("Couldn't load module " .. file_root .. ": " .. vim.inspect(response))
 				end
 			end
 		end

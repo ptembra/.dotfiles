@@ -1,13 +1,12 @@
 local wk = require('which-key')
 
-wk.register({
-	['d'] = {
-		name = '[D]iagnostics',
-		['c'] = { '<cmd>TroubleToggle<cr>', 'Toggle Diagnostics' },
-		['w'] = { '<cmd>TroubleToggle workspace_diagnostics<cr>', 'Workspace Diagnostics' },
-		['d'] = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Document Diagnostics' },
-		['q'] = { '<cmd>TroubleToggle quickfix<cr>', 'Quickfix' },
-		['l'] = { '<cmd>TroubleToggle loclist<cr>', 'Loclist' },
-		['r'] = { '<cmd>TroubleToggle lsp_references<cr>', 'References' },
+wk.add(
+	{
+		{ "<leader>d",  group = "[D]iagnostics" },
+		{ "<leader>dc", "<cmd>Trouble diagnostics toggle<cr>",          desc = "Toggle Diagnostics" },
+		{ "<leader>dl", "<cmd>Trouble loclist toggle <cr>",             desc = "Loclist" },
+		{ "<leader>dq", "<cmd>Trouble qflist toggle<cr>",               desc = "Quickfix" },
+		{ "<leader>dr", "<cmd>Trouble lsp_references toggle<cr>",       desc = "References" },
+		{ "<leader>dw", "<cmd>Trouble workspace_diagnostics toggle<cr>", desc = "Workspace Diagnostics" },
 	}
-}, { prefix = '<leader>', mode = 'n' })
+)

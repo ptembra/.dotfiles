@@ -28,8 +28,6 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
-vim.g.codeium_disable_bindings = true
-
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -88,6 +86,16 @@ vim.opt.hlsearch = true
 -- Use FZF
 vim.opt.rtp:prepend('/opt/homebrew/opt/fzf/')
 
+
+vim.diagnostic.config({
+  virtual_text = {
+    source = true,
+    prefix = "●"
+  },
+  severity_sort = true,
+  update_in_insert = false,
+  virtual_lines = true,
+})
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
