@@ -1,4 +1,4 @@
-require("telescope").setup({
+require("nvim.lua.plugins.core.telescope").setup({
 	pickers = {
 		find_files = {
 			hidden = true
@@ -25,5 +25,5 @@ require("telescope").setup({
 	}
 })
 
-pcall(require('telescope').load_extension, 'fzf')
-pcall(require('telescope').load_extension, 'ui-select')
+pcall(require('nvim.lua.plugins.core.telescope').load_extension, 'fzf')
+pcall(require('nvim.lua.plugins.core.telescope').load_extension, 'ui-select')
