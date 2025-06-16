@@ -2,7 +2,7 @@ local M = {}
 local health = require('debug.health')
 
 local function debug_print(msg)
-	if vim.o.verbose > 0 then
+	if vim.o.verbose >= 1 then
 		print(msg)
 	end
 end
@@ -12,7 +12,7 @@ local function load_module(module_path, name)
 
 	local success, response = pcall(require, module_path)
 	if not success then
-		print("Couldn't load module " .. name .. ": " .. tostring(response))
+		debug_print("Couldn't load module " .. name .. ": " .. tostring(response))
 		return nil
 	end
 
@@ -48,7 +48,7 @@ local function process_directory(dir, name, base, exclude)
 	local mods = {}
 
 	if not nested_handle then
-		print("Can't load nested directory " .. nested_dir)
+		debug_print("Can't load nested directory " .. nested_dir)
 		return mods
 	end
 
