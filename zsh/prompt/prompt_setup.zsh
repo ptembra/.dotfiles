@@ -31,10 +31,10 @@ tmux_indicator(){
   fi
 }
 
-_prompt_str="$(tmux_indicator)[%F{14}%n@%m%f | %F{12}%8~%f] %(?.%F{green}.%F{red})→%f "
+_prompt_str="$(tmux_indicator) %F{14}%F{12}%8~%f %(?.%F{green}.%F{red})→%f "
 
 collapse_prompt_on_enter(){
-  PROMPT="[%F{14}%n@%m%f | %F{12}%1~%f] %(?.%F{green}.%F{red})→%f "
+  PROMPT="%F{14}%f %F{12}%3~%f %(?.%F{green}.%F{red})→%f "
   RPROMPT=""
   zle reset-prompt
   PROMPT="$_prompt_str"
