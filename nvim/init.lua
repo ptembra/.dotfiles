@@ -107,11 +107,12 @@ vim.diagnostic.config({
     update_in_insert = false,
   }
 })
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  callback = function()
-    vim.diagnostic.open_float(nil, { focus = false })
-  end
-})
+
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   callback = function()
+--     vim.diagnostic.open_float(nil, { focus = false })
+--   end
+-- })
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
