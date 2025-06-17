@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- Allow closing select windows with 'q'
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
   pattern = {
@@ -29,6 +30,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function()
