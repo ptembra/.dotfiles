@@ -1,4 +1,6 @@
 return {
   "https://github.com/echasnovski/mini.surround",
-  opts = {}
+  config = function()
+    require 'mini.surround'.setup()
+  end
 }

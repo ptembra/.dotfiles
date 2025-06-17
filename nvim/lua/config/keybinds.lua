@@ -3,9 +3,13 @@ local wk = require('which-key')
 -- OIL
 local oil = require("oil")
 wk.add({
-  { "<leader>o", function()
-    oil.open()
-  end }
+  {
+    "<leader>o",
+    function()
+      oil.open()
+    end,
+    desc = "Open [O]il"
+  }
 })
 
 -- General Utils
@@ -98,3 +102,22 @@ wk.add({
     remap = false
   },
 })
+
+-- TROUBLE
+wk.add({
+  { "<leader>d",  group = "[D]iagnostics" },
+  { "<leader>dc", "<cmd>Trouble diagnostics toggle<cr>",           desc = "Toggle Diagnostics" },
+  { "<leader>dl", "<cmd>Trouble loclist toggle <cr>",              desc = "Loclist" },
+  { "<leader>dq", "<cmd>Trouble qflist toggle<cr>",                desc = "Quickfix" },
+  { "<leader>dr", "<cmd>Trouble lsp_references toggle<cr>",        desc = "References" },
+  { "<leader>dw", "<cmd>Trouble workspace_diagnostics toggle<cr>", desc = "Workspace Diagnostics" },
+})
+
+-- AERIAL
+wk.add({
+  {
+    { "<leader>a", "<cmd>AerialToggle!<CR>", desc = "Toggle Aerial", nowait = true, remap = false },
+  }
+})
+
+-- SURROUND
