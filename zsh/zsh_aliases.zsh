@@ -33,3 +33,5 @@ alias ga="git add $1"
 alias cat="bat"
 
 alias cd="z"
+
+# alias tmux="tmux -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
