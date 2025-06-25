@@ -5,7 +5,7 @@ return {
     ---@module "ibl"
     ---@type ibl.config
     opts = {},
-    config = function(_, opts)
+    config = function(_, _)
         vim.g.indent_blankline_use_treesitter = true
         local highlight = {
             "RainbowBlue",
