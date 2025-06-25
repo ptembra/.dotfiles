@@ -65,7 +65,6 @@ export PATH="$PATH:/Users/pedro/.local/bin"
 # MATLAB Cli
 alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab -nojvm -nodesktop"
 
-
 # --> Leave as last
 # Custom Prompt
 fpath=($HOME/.dotfiles/zsh/prompt/prompt_setup.zsh $fpath)
