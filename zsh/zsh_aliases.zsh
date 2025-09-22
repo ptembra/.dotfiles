@@ -1,9 +1,10 @@
 #--> ALIAS FILE <--#
 
 #CONFIGS
-alias zshconf='cd ~/.dotfiles/zsh/ && nvim'
-alias vimconf='cd ~/.dotfiles/nvim/ && nvim'
-alias tmuxconf='cd ~/.dotfiles/tmux/ && nvim'
+alias zshconf='cd ~/.dotfiles/zsh/ && nvim .'
+alias vimconf='cd ~/.dotfiles/nvim/ && nvim .'
+alias tmuxconf='cd ~/.dotfiles/tmux/ && nvim .'
+alias ghosttyconf='cd ~/.dotfiles/ghostty/ && nvim .'
 
 #UTIL
 c-wav-mp3 () {
@@ -33,5 +34,6 @@ alias ga="git add $1"
 alias cat="bat"
 
 alias cd="z"
+
 
 # alias tmux="tmux -f '$XDG_CONFIG_HOME/tmux/tmux.conf'"
