@@ -2,6 +2,8 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 if [ -z "$TMUX" ]; then
     tmux attach -t main || tmux new -s main
 fi
