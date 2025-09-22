@@ -1,5 +1,9 @@
-# My dotfiles!
+# dotfiles
 This is my personal configuration for *most* of my workspace.
-The code is a bit messy, and a lot of features are unimplemented.
+A lot of features are unimplemented.
 
-As of `Jun 2025`, I am using an M3 MacBook Air with Kitty as my primary terminal.
+## To-do
+- [ ] Auto-install and bootstrap
+- [ ] Fix Elixir in neovim config
+
+As of `Sep 2025`, I am using an M3 MacBook Air with Ghostty as my primary terminal.
