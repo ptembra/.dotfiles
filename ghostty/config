@@ -5,9 +5,15 @@ font-size = 14
 
 window-padding-balance = true
 
-theme = Everforest Dark   Hard
+theme = Everforest Dark Hard 
 foreground = #D3C6AA
 background = #2D353B
+
+background-opacity = .98
+background-blur = true
+
+window-padding-x = 0
+window-padding-y = 10,0
 
 selection-foreground = #2d353b
 selection-background = #543a48
