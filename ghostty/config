@@ -3,7 +3,7 @@
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 14
 
-window-padding-balance = true
+# window-padding-balance = true
 
 theme = Everforest Dark Hard 
 foreground = #D3C6AA
@@ -12,8 +12,14 @@ background = #2D353B
 background-opacity = .98
 background-blur = true
 
-window-padding-x = 0
+window-decoration = none
+macos-titlebar-style = hidden
+
 window-padding-y = 10,0
+
+confirm-close-surface = false
+
+window-padding-color = extend
 
 selection-foreground = #2d353b
 selection-background = #543a48
