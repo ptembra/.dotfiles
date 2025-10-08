@@ -14,7 +14,6 @@ start-at-login = true # Note: This MUST be enabled for the pre and post startup 
 
 # Note: Available commands you can use during startup are here: https://nikitabobko.github.io/AeroSpace/commands
 
-
 #===================#
 # Windows           #
 #===================#
@@ -119,6 +118,9 @@ alt-tab = 'workspace-back-and-forth'
 # Move workspace to another display:
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
+# Hide application keys
+cmd-h = [] # Disable "hide application"
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
@@ -156,45 +158,61 @@ check-further-callbacks = true
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
 run = ['layout tiling', 'move-node-to-workspace Social(s)']
+check-further-callbacks = true
 
 # WhatsApp
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
 run = ['layout tiling', 'move-node-to-workspace Social(s)']
+check-further-callbacks = true
 
 # Todoist
 [[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
 run = ['layout tiling', 'move-node-to-workspace Task_Management(t)']
+check-further-callbacks = true
 
 # Ghostty
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = ['layout tiling', 'move-node-to-workspace Coding(c)']
+check-further-callbacks = true
 
 # Spotify
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = ['layout tiling', 'move-node-to-workspace Others(o)']
+check-further-callbacks = true
 
 # Arc
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = ['layout tiling', 'move-node-to-workspace Browsing(b)']
+check-further-callbacks = true
 
 # Spark Mail
 [[on-window-detected]]
 if.app-id = 'com.readdle.SparkDesktop'
 run = ['layout tiling', 'move-node-to-workspace Productivity(p)']
+check-further-callbacks = true
 
 # Slack
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = ['layout tiling', 'move-node-to-workspace Productivity(p)']
+check-further-callbacks = true
 
+# Make quicklook alwyas float
 [[on-window-detected]]
 if.app-id = 'com.apple.QuickLookFramework'
 run = ['layout floating']
+check-further-callbacks = true
+
+# Empty windows always float (hotfix for dialogs causing layout to get scrambled)
+# [[on-window-detected]]
+# if.window-title-regex-substring = '$^'
+# run = ['layout floating']
+# check-further-callbacks = true
 
 #======================#
 # Misc. Info and Notes #
