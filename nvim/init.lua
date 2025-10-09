@@ -139,7 +139,7 @@ require("lazy").setup({
     colorscheme = { "everforest" }
   },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- checker = { enabled = true },
 })
 
 -- Initializes all config files
