@@ -57,8 +57,12 @@ outer.right =      10
 # Shortcuts         #
 #===================#
 # Switch layout:
-ctrl-alt-v = 'layout tiles horizontal vertical'
-ctrl-alt-h = 'layout accordion horizontal vertical'
+ctrl-alt-slash = 'layout tiles horizontal vertical'
+ctrl-alt-comma = 'layout accordion horizontal vertical'
+
+# window resizing
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
 
 # toggle window zoom:
 cmd-alt-f = 'fullscreen'
@@ -78,10 +82,6 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-# Resize windows:
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
-
 # Change positions of the currently focused tile (vim version):
 cmd-alt-h = ['join-with left', 'mode main']
 cmd-alt-j = ['join-with down', 'mode main']
@@ -99,6 +99,7 @@ alt-1 = 'workspace Project-1'
 alt-2 = 'workspace Project-2'
 alt-o = 'workspace Others(o)'
 alt-t = 'workspace Task_Management(t)'
+alt-f = 'workspace File_Management(f)'
 
 # Move the app that currently has focus to another workspace:
 alt-shift-b = 'move-node-to-workspace Browsing(b)'
@@ -111,6 +112,7 @@ alt-shift-2 = 'move-node-to-workspace Project-2'
 alt-shift-t = 'move-node-to-workspace Task_Management(t)'
 alt-shift-e = 'move-node-to-workspace Extra(e)'
 alt-shift-o = 'move-node-to-workspace Others(o)'
+alt-shift-f = 'move-node-to-workspace File_Management(f)'
 
 # Switch back and forth between the current and previous workspace:
 alt-tab = 'workspace-back-and-forth'
@@ -124,20 +126,23 @@ cmd-h = [] # Disable "hide application"
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
+# Open terminal on alt-enter
+alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
+
+# Open finder on alt-\
+alt-backslash = 'exec-and-forget open /System/Library/CoreServices/Finder.app'
+
 # Service bindings:
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
+alt-shift-j = ['join-with up', 'mode main']
+alt-shift-k = ['join-with down', 'mode main']
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-
-
-# Set float layout for Extra workspace
-[[on-window-detected]]
-if.workspace = 'Extra(e)'
-run = 'layout floating'
-check-further-callbacks = true
 
 #===================================================#
 # Workspace Assignments for individual Applications #
@@ -187,7 +192,7 @@ check-further-callbacks = true
 # Arc
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
-run = ['layout tiling', 'move-node-to-workspace Browsing(b)']
+run = ['layout floating', 'move-node-to-workspace Browsing(b)']
 check-further-callbacks = true
 
 # Spark Mail
@@ -205,6 +210,41 @@ check-further-callbacks = true
 # Make quicklook alwyas float
 [[on-window-detected]]
 if.app-id = 'com.apple.QuickLookFramework'
+run = ['layout floating']
+
+# Finder
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# run = ['layout tiling', 'move-node-to-workspace File_Management(f)']
+# check-further-callbacks = true
+
+# Make LuLu alwyas float
+[[on-window-detected]]
+if.app-id = 'com.objective-see.lulu.app'
+run = ['layout floating']
+check-further-callbacks = true
+
+# Make BlockBlock alwyas float
+[[on-window-detected]]
+if.app-id = 'com.objective-see.blockblock.helper'
+run = ['layout floating']
+check-further-callbacks = true
+
+# Make BlockBlock alwyas float
+[[on-window-detected]]
+if.app-id = 'com.objective-see.KnockKnock'
+run = ['layout floating']
+check-further-callbacks = true
+
+# Make Ableton alwyas float
+[[on-window-detected]]
+if.app-id = 'com.ableton.live'
+run = ['layout floating']
+check-further-callbacks = true
+
+# Make OnyX alwyas float
+[[on-window-detected]]
+if.app-id = 'com.titanium.OnyX'
 run = ['layout floating']
 check-further-callbacks = true
 

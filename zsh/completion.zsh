@@ -27,8 +27,6 @@ _pyenv() {
   reply=(${(ps:\n:)completions})
 }
 
-# source $(fabric completions zsh)
-
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on successive tab press
@@ -72,3 +70,4 @@ autoload -Uz compinit; compinit
 compinit -u 
 
 eval "$(ov --completion zsh)"
+
