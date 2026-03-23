@@ -2,22 +2,20 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
 if [ -z "$TMUX" ]; then
     tmux attach -t main || tmux new -s main
 fi
 
-source $HOME/.dotfiles/zsh/zsh_init.zsh
+source $XDG_CONFIG_HOME/zsh/zsh_init.zsh
 
 # Profiler
 # zmodload zsh/zprof
 
 # Load Plugins
-source $HOME/.dotfiles/zsh/plugins.zsh
+source $XDG_CONFIG_HOME/zsh/plugins.zsh
 
 # ALIASES
-source $HOME/.dotfiles/zsh/zsh_aliases.zsh
+source $XDG_CONFIG_HOME/zsh/zsh_aliases.zsh
 
 # OPTIONS
 setopt HIST_SAVE_NO_DUPS
@@ -33,6 +31,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 zsh-defer -c '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"'  # This loads nvm
 
+
 export GOBIN=~/go/bin
 export PATH=$PATH:$GOBIN
 
@@ -40,11 +39,10 @@ eval $(thefuck --alias)
 eval "$(rbenv init - zsh)"
 eval "$(fzf --zsh)"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$HOME/.rbenv/versions/3.3.0/bin/ruby:$PATH"
-
 # Autocompletion
-source $HOME/.dotfiles/zsh/completion.zsh
+source <(fabric completions zsh)
+
+source $XDG_CONFIG_HOME/zsh/completion.zsh
 eval "$(ov --completion zsh)"
 
 # Python VENV path
@@ -67,10 +65,16 @@ export PATH="$PATH:/Users/pedro/.local/bin"
 # MATLAB Cli
 alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab -nojvm -nodesktop"
 
+# Diable autin up arrow
+eval "$(atuin init zsh --disable-up-arrow)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$HOME/.rbenv/versions/3.3.0/bin/ruby:$PATH"
+
 # --> Leave as last
 # Custom Prompt
-fpath=($HOME/.dotfiles/zsh/prompt/prompt_setup.zsh $fpath)
-source $HOME/.dotfiles/zsh/prompt/prompt_setup.zsh
+fpath=($XDG_CONFIG_HOME/zsh/prompt/prompt_setup.zsh $fpath)
+source $XDG_CONFIG_HOME/zsh/prompt/prompt_setup.zsh
 autoload -Uz prompt_setup && prompt_setup
 
 # styles VCS in prompt
