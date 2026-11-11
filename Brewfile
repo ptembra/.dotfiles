@@ -4,66 +4,164 @@ tap "iloveitaly/tap"
 tap "nikitabobko/tap"
 tap "noborus/tap"
 tap "oven-sh/bun"
+# Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
-brew "jpeg-xl"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Cross-platform make
 brew "cmake"
+# Command-line csv viewer
 brew "csvlens"
+# Secure runtime for JavaScript and TypeScript
 brew "deno"
-brew "docker"
+# Pack, ship and run any application as a lightweight container
+brew "docker", link: false
+# Programming language for highly scalable real-time systems
 brew "erlang"
+# Functional metaprogramming aware language built on Erlang VM
 brew "elixir"
+# Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Identify or delete duplicate files
 brew "fdupes"
-brew "tesseract"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Firebase command-line tools
 brew "firebase-cli"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
 brew "gh"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Statically typed language for the Erlang VM
 brew "gleam"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
-brew "python@3.13", link: false
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle"
+# API Support for your favorite torrent trackers
+# New file format for still image compression
+brew "jpeg-xl"
+# Convert ebooks from epub to kepub
+brew "kepubify"
+# Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit"
+# Package manager for the Lua programming language
 brew "luarocks"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Package for scientific computing with Python
 brew "numpy"
+# Manage multiple Node.js versions
 brew "nvm"
+# Create, run, and share large language models (LLMs)
+# Feature-rich terminal-based text viewer
+brew "ov"
+# Command-line tool to generate, analyze, convert and manipulate colors
+brew "pastel"
+# Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Fast, disk space efficient package manager
 brew "pnpm"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Object-relational database system
 brew "postgresql@14"
+# Python version management
 brew "pyenv"
+# Tool Command Language
 brew "tcl-tk"
+# Python interface to Tcl/Tk
 brew "python-tk@3.13"
-brew "python@3.12", link: false
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Install various Ruby versions and implementations
 brew "ruby-build"
+# Ruby version manager
 brew "rbenv"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Safe, concurrent, practical language
 brew "rust"
+# Software for mathematics, science, and engineering
 brew "scipy"
+# Symbolic link maintenance utility
 brew "symlinks"
+# Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Programmatically correct mistyped console commands
 brew "thefuck"
+# Terminal multiplexer
 brew "tmux"
+# Automatic workarounds for problems in Wine
 brew "winetricks"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Programming language designed for robustness, optimality, and clarity
 brew "zig"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
-brew "oven-sh/bun/bun"
 cask "aerospace"
+# Monitors common persistence locations
+cask "blockblock"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# Universal database tool and SQL client
 cask "dbeaver-community"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Desktop client for GitHub repositories
+cask "github"
+# Free and open-source media player
+cask "iina"
+# Menu bar manager
+cask "jordanbaird-ice@beta"
+# Electronics design automation suite
 cask "kicad"
+# Audio tagger focusing on efficiency
 cask "kid3"
+# Utility that shows the latest app updates
 cask "latest"
+# Open-source firewall to block unknown outgoing connections
+cask "lulu"
+# Open-source Markdown editor
 cask "macdown"
+# Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
+# Open-source software for live streaming and screen recording
 cask "obs"
+# Verify system files structure, run miscellaneous maintenance and more
+cask "onyx"
+# Monitors computer mic and webcam
+cask "oversight"
+# Administration and development platform for PostgreSQL
 cask "pgadmin4"
+# Minecraft launcher
+# Peer to peer Bitorrent client
 cask "qbittorrent"
+# List out the contents of a zip file in the QuickLook preview
 cask "qlzipinfo"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
+# Run commands and display their output on the desktop
+cask "ubersicht"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 vscode "aaron-bond.better-comments"
 vscode "ardenivanov.svelte-intellisense"
 vscode "astro-build.astro-vscode"
@@ -125,7 +223,6 @@ vscode "quicktype.quicktype"
 vscode "redhat.vscode-yaml"
 vscode "ritwickdey.liveserver"
 vscode "rust-lang.rust-analyzer"
-vscode "sainnhe.everforest"
 vscode "steoates.autoimport"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "streetsidesoftware.code-spell-checker-portuguese-brazilian"
@@ -135,11 +232,10 @@ vscode "tecosaur.latex-utilities"
 vscode "twxs.cmake"
 vscode "tyriar.lorem-ipsum"
 vscode "vadimcn.vscode-lldb"
-vscode "visualstudioexptteam.intellicode-api-usage-examples"
-vscode "visualstudioexptteam.vscodeintellicode"
 vscode "vscodevim.vim"
 vscode "wayou.vscode-todo-highlight"
 vscode "wix.vscode-import-cost"
 vscode "xabikos.javascriptsnippets"
 go "github.com/air-verse/air"
 go "github.com/a-h/templ/cmd/templ"
+npm "corepack"
