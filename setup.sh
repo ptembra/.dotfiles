@@ -49,5 +49,9 @@ brew bundle --file="$DOT/Brewfile" || print -u2 "Some Brewfile entries failed; f
 # 4. tmux plugin manager (tmux.conf loads it from ~/.tmux/plugins/tpm)
 [[ -d ~/.tmux/plugins/tpm ]] || git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# 5. git: XDG_CONFIG_HOME makes git read $DOT/git; these cover processes started without it (cron, other shells)
+mkdir -p ~/.config/git
+for f in config ignore; do ln -sfn "$DOT/git/$f" ~/.config/git/$f; done
+
 print "Done. Open a new terminal: antidote installs the zsh plugins on first start."
 print "In tmux, press C-a then I to install tmux plugins. nvim installs its own plugins on first launch."
