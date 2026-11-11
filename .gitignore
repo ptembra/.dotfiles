@@ -1,18 +1,31 @@
-lua-definitions/modules/*
-tmux/plugins/*
-.DS_Store
+# XDG_CONFIG_HOME points at this repo, so apps write their config *and their state* here.
+# Allowlist: everything at the top level is ignored unless opted in below.
+# Tracking a new app: add `!/<app>/` here.
+/*
+!/.gitignore
+!/README.md
+!/setup.sh
+!/Brewfile
+!/aerospace/
+!/atuin/
+!/config-xpui.ini
+!/ghostty/
+!/git/
+!/nvim/
+!/thefuck/
+!/tmux/
+!/yazi/
+!/zsh/
 
-# machine state / secrets: never commit
+# machine state inside tracked folders: never commit
+.DS_Store
+*.zwc
+__pycache__/
+*.pyc
+tmux/plugins/
 zsh/.zsh_history
 zsh/.zsh_sessions/
 zsh/.zcompdump*
 zsh/.zcompcache/
-zsh/antigen.log
-*.zwc
-configstore/
-qBittorrent/
-gtk-2.0/
-homebrew/
-__pycache__/
-*.pyc
 zsh/.zsh_plugins.zsh
+zsh/antigen.log
