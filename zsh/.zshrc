@@ -57,7 +57,10 @@ fi
 export PATH="$PATH:/Users/pedro/.local/bin"
 
 # MATLAB Cli
-alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab -nojvm -nodesktop"
+# newest installed release, so upgrades don't break the alias
+_matlab=(/Applications/MATLAB_R*.app(N[-1]))
+(( $#_matlab )) && alias matlab="'$_matlab/bin/matlab' -nojvm -nodesktop"
+unset _matlab
 
 # Diable autin up arrow
 eval "$(atuin init zsh --disable-up-arrow)"
