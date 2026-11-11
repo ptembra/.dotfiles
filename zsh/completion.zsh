@@ -67,7 +67,6 @@ bindkey -M menuselect '^o' accept-and-infer-next-history
 zstyle ':completion:*:*:*:default' menu select
 
 autoload -Uz compinit; compinit
-compinit -u 
 
 eval "$(ov --completion zsh)"
 

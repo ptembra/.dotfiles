@@ -1,5 +1,8 @@
-clear
-fastfetch
+# skip the banner in embedded terminals (nvim :term, VS Code)
+if [[ -z $NVIM && $TERM_PROGRAM != vscode ]]; then
+  clear
+  fastfetch
+fi
 # LOCATION="?"
 # echo "Welcome back, \033[0;36m$(whoami)\033[0m!"
 # echo "---"

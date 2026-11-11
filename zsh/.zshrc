@@ -2,7 +2,8 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
-if [ -z "$TMUX" ]; then
+# only auto-attach from Ghostty, so other apps' terminals don't spawn the tmux server
+if [ -z "$TMUX" ] && [[ $TERM_PROGRAM == ghostty ]]; then
     tmux attach -t main || tmux new -s main
 fi
 
@@ -40,24 +41,14 @@ eval "$(rbenv init - zsh)"
 eval "$(fzf --zsh)"
 
 # Autocompletion
-source <(fabric completions zsh)
+# source <(fabric completions zsh)
 
 source $XDG_CONFIG_HOME/zsh/completion.zsh
-eval "$(ov --completion zsh)"
-
 # Python VENV path
 # check for VENV in home folder
 if [ -d "$HOME/.venv" ]; then
     export PATH="$HOME/.venv/bin:$PATH"
 fi
-
-# pnpm
-export PNPM_HOME="/Users/pedro/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 # Created by `pipx` on 2024-04-06 00:22:01
 export PATH="$PATH:/Users/pedro/.local/bin"
@@ -68,9 +59,6 @@ alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab -nojvm -nodesktop"
 # Diable autin up arrow
 eval "$(atuin init zsh --disable-up-arrow)"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$HOME/.rbenv/versions/3.3.0/bin/ruby:$PATH"
-
 # --> Leave as last
 # Custom Prompt
 fpath=($XDG_CONFIG_HOME/zsh/prompt/prompt_setup.zsh $fpath)
@@ -80,3 +68,11 @@ autoload -Uz prompt_setup && prompt_setup
 # styles VCS in prompt
 prompt_vcs_style
 
+
+# pnpm
+export PNPM_HOME='/Users/pedro/Library/pnpm'
+case ":$PATH:" in
+  ":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

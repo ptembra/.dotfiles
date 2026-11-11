@@ -29,7 +29,7 @@ alias ll="lsd -a --color always"
 alias ..="cd .."
 
 #git
-alias ga="git add $1"
+alias ga="git add"
 
 alias cat="bat"
 
