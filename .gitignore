@@ -1,3 +1,17 @@
 lua-definitions/modules/*
 tmux/plugins/*
 .DS_Store
+
+# machine state / secrets: never commit
+zsh/.zsh_history
+zsh/.zsh_sessions/
+zsh/.zcompdump*
+zsh/.zcompcache/
+zsh/antigen.log
+*.zwc
+configstore/
+qBittorrent/
+gtk-2.0/
+homebrew/
+__pycache__/
+*.pyc
