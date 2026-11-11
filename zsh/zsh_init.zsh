@@ -1,7 +1,9 @@
-# skip the banner in embedded terminals (nvim :term, VS Code)
-if [[ -z $NVIM && $TERM_PROGRAM != vscode ]]; then
+# banner: skip embedded terminals (nvim :term, VS Code), and inside tmux show it once per session
+if [[ -z $NVIM && $TERM_PROGRAM != vscode ]] && [[ -z $TMUX || -z $(tmux show -qv @fastfetch_shown) ]]; then
+  [[ -n $TMUX ]] && tmux set -q @fastfetch_shown 1
   clear
   fastfetch
+  echo "\n"
 fi
 # LOCATION="?"
 # echo "Welcome back, \033[0;36m$(whoami)\033[0m!"
@@ -43,4 +45,3 @@ fi
 #
 # cat $ZWC_FILE
 #
-echo "\n"

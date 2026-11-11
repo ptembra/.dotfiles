@@ -28,16 +28,19 @@ else
   export EDITOR='nvim'
 fi
 
-# Defers NVM loading
+# NVM: default alias is "node" (newest installed), so put that on PATH directly;
+# `nvm use` at load costs ~300ms, --no-use skips it
 export NVM_DIR="$HOME/.nvm"
-zsh-defer -c '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"'  # This loads nvm
+path=($NVM_DIR/versions/node/*/bin(Nn[-1]) $path)
+zsh-defer -c '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh" --no-use'
 
 
 export GOBIN=~/go/bin
 export PATH=$PATH:$GOBIN
 
-eval $(thefuck --alias)
-eval "$(rbenv init - zsh)"
+# thefuck costs ~150ms to init, so load it on first use
+fuck() { unfunction fuck; eval "$(thefuck --alias)"; fuck "$@"; }
+zsh-defer -c 'eval "$(rbenv init - --no-rehash zsh)"'
 eval "$(fzf --zsh)"
 
 # Autocompletion

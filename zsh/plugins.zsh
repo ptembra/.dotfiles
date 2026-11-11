@@ -12,7 +12,7 @@ eval "$(zoxide init zsh)"
 source ~/.dotfiles/zsh/plugins/zsh-defer/zsh-defer.plugin.zsh
 
 export ANTIGEN_LOG="$HOME/.dotfiles/zsh/antigen.log"
-source $(brew --prefix)/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 export ATUIN_NOBIND=1
 

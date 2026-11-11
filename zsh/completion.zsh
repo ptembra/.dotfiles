@@ -1,12 +1,7 @@
 zmodload zsh/complist
 
-source $(fzf --zsh) &> /dev/null
-
 # Brew completions
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
+FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
 
 if [[ ! -o interactive ]]; then
     return
