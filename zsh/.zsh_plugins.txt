@@ -1,0 +1,6 @@
+# zsh plugins, managed by antidote. Update: antidote update
+romkatv/zsh-defer
+zsh-users/zsh-completions path:src kind:fpath
+# deferred = loaded after .zshrc finishes, i.e. after compinit (fzf-tab needs that, syntax-highlighting must be last)
+Aloxaf/fzf-tab kind:defer
+zsh-users/zsh-syntax-highlighting kind:defer

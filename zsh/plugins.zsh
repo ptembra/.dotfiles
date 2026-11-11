@@ -9,16 +9,13 @@ colors
 # Loads Zoxide
 eval "$(zoxide init zsh)"
 
-source ~/.dotfiles/zsh/plugins/zsh-defer/zsh-defer.plugin.zsh
-
-export ANTIGEN_LOG="$HOME/.dotfiles/zsh/antigen.log"
-source /opt/homebrew/share/antigen/antigen.zsh
-
 export ATUIN_NOBIND=1
 
-antigen bundle Aloxaf/fzf-tab
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle atuinsh/atuin@main
-antigen apply
+# Plugins: list in .zsh_plugins.txt; antidote rebuilds the static .zsh_plugins.zsh only when the list changes
+zsh_plugins=$ZDOTDIR/.zsh_plugins
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+  antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+fi
+source ${zsh_plugins}.zsh
 

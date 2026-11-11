@@ -15,3 +15,4 @@ gtk-2.0/
 homebrew/
 __pycache__/
 *.pyc
+zsh/.zsh_plugins.zsh
