@@ -64,6 +64,8 @@ unset _matlab
 
 # Diable autin up arrow
 eval "$(atuin init zsh --disable-up-arrow)"
+# ^R = atuin search (ATUIN_NOBIND stops atuin binding anything else); up arrow stays zsh's own history
+bindkey '^R' atuin-search
 
 # --> Leave as last
 # Custom Prompt
