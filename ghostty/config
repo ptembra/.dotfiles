@@ -5,9 +5,8 @@ font-size = 14
 
 # window-padding-balance = true
 
-theme = Everforest Dark Hard 
-foreground = #D3C6AA
-background = #2D353B
+theme = Everforest Dark Hard
+background = #272E33
 
 background-opacity = .98
 background-blur = true
@@ -24,32 +23,26 @@ confirm-close-surface = false
 selection-foreground = #2d353b
 selection-background = #543a48
 
-# Colours
+# Colours: only where they differ from the theme (0, 7 and the brights 8-15, which the theme makes pale)
 palette = 0=#4b565c
 palette = 8=#7a8478
 
 #-- Red
-palette = 1=#e67e80
 palette = 9=#e67e80
 
 #-- Green
-palette = 2=#a7c080
 palette = 10=#a7c080
 
 #-- Yellow
-palette = 3=#dbbc7f
 palette = 11=#dbbc7f
 
 #-- Blue
-palette = 4=#7fbbb3
 palette = 12=#7fbbb3
 
 #-- Magenta
-palette = 5=#d699b6
 palette = 13=#d699b6
 
 #-- Cyan
-palette = 6=#83c092
 palette = 14=#83c092
 
 #-- White
