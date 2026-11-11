@@ -39,9 +39,7 @@ brew "fzf"
 # GitHub command-line tool
 brew "gh"
 # Quickly rewrite git repository history
-brew "git-filter-repo"
 # Statically typed language for the Erlang VM
-brew "gleam"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
@@ -81,9 +79,9 @@ brew "pyenv"
 # Tool Command Language
 brew "tcl-tk"
 # Python interface to Tcl/Tk
-brew "python-tk@3.13"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
+brew "python@3.14"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Ruby version manager
@@ -93,19 +91,15 @@ brew "ripgrep"
 # Safe, concurrent, practical language
 brew "rust"
 # Software for mathematics, science, and engineering
-brew "scipy"
 # Symbolic link maintenance utility
 brew "symlinks"
 # Modernized, complete, self-contained TeX/LaTeX engine
-brew "tectonic"
 # OCR (Optical Character Recognition) engine
-brew "tesseract"
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
 # Automatic workarounds for problems in Wine
-brew "winetricks"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
 # Feature-rich command-line audio/video downloader
