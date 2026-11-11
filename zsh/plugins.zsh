@@ -1,6 +1,6 @@
 # Git Shell Integration
 autoload -Uz add-zsh-hook vcs_info
-add-zsh-hook precmd vcs_info
+# vcs_info runs async from prompt/prompt_setup.zsh
 
 # Loads Colours
 autoload colors
