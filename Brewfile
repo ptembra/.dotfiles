@@ -1,5 +1,4 @@
 tap "bell-sw/liberica"
-tap "homebrew/services"
 tap "iloveitaly/tap"
 tap "nikitabobko/tap"
 tap "noborus/tap"
@@ -75,7 +74,7 @@ brew "pnpm"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Object-relational database system
-brew "postgresql@14"
+brew "postgresql@18"
 # Python version management
 brew "pyenv"
 # Tool Command Language
@@ -132,8 +131,6 @@ cask "kicad"
 cask "kid3"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
-# Open-source Markdown editor
-cask "macdown"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Verify system files structure, run miscellaneous maintenance and more
