@@ -130,22 +130,16 @@ cask "jordanbaird-ice@beta"
 cask "kicad"
 # Audio tagger focusing on efficiency
 cask "kid3"
-# Utility that shows the latest app updates
-cask "latest"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
 # Open-source Markdown editor
 cask "macdown"
-# Simple application that will prevent iTunes or Apple Music from launching
-cask "notunes"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx"
 # Monitors computer mic and webcam
 cask "oversight"
-# Administration and development platform for PostgreSQL
-cask "pgadmin4"
 # Minecraft launcher
 # Peer to peer Bitorrent client
 cask "qbittorrent"
@@ -155,8 +149,6 @@ cask "qlzipinfo"
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
-# Run commands and display their output on the desktop
-cask "ubersicht"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
 vscode "aaron-bond.better-comments"
