@@ -9,7 +9,7 @@ return {
 		-- no-op for parsers that are already installed
 		require("nvim-treesitter").install({
 			"bash", "c", "cpp", "css", "eex", "elixir", "go", "heex", "html", "java",
-			"javascript", "json", "lua", "markdown", "markdown_inline", "python", "rust",
+			"javascript", "json", "lua", "markdown", "markdown_inline", "php", "python", "rust",
 			"svelte", "toml", "tsx", "typescript", "vim", "vimdoc", "yaml",
 		})
 		-- highlight any filetype that has a parser; pcall skips the rest

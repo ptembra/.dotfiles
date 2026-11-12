@@ -67,6 +67,7 @@ brew "ov"
 # Command-line tool to generate, analyze, convert and manipulate colors
 brew "pastel"
 # Execute binaries from Python packages in isolated environments
+brew "php"
 brew "pipx"
 # Fast, disk space efficient package manager
 brew "pnpm"
