@@ -77,7 +77,7 @@ wk.add({
   {
     "<leader>lf",
     function()
-      vim.lsp.buf.format()
+      require("conform").format()
     end,
     desc = "Format buffer",
     nowait = true,

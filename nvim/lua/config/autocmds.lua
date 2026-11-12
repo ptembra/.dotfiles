@@ -30,13 +30,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Format on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end
-})
+-- Format on save: see plugins/code/conform.lua
 
 -- -- Start vim inside oil by default
 -- vim.api.nvim_create_autocmd("VimEnter", {
