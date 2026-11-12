@@ -8,7 +8,7 @@ font-size = 14
 theme = Everforest Dark Hard
 background = #272E33
 
-background-opacity = .98
+background-opacity = .92
 background-blur = true
 
 # window-decoration = none
