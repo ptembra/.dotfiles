@@ -113,13 +113,6 @@ wk.add({
   { "<leader>dw", "<cmd>Trouble workspace_diagnostics toggle<cr>", desc = "Workspace Diagnostics" },
 })
 
--- AERIAL
-wk.add({
-  {
-    { "<leader>\\", "<cmd>AerialToggle!<CR>", desc = "Toggle Aerial", nowait = true, remap = false },
-  }
-})
-
 -- CLAUDE
 wk.add(
   {
