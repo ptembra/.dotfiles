@@ -8,8 +8,8 @@ font-size = 14
 theme = Everforest Dark Hard
 background = #272E33
 
-background-opacity = .92
-background-blur = true
+background-opacity = .94
+background-blur = 30
 
 # window-decoration = none
 # macos-titlebar-style = hidden
