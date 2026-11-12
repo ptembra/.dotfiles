@@ -9,8 +9,6 @@ brew "antidote"
 brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Resource monitor. C++ version and continuation of bashtop and bpytop
-brew "btop"
 # Cross-platform make
 brew "cmake"
 # Command-line csv viewer
@@ -27,8 +25,6 @@ brew "elixir"
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Identify or delete duplicate files
-brew "fdupes"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Firebase command-line tools
@@ -119,22 +115,16 @@ cask "claude-code"
 cask "dbeaver-community"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Desktop client for GitHub repositories
-cask "github"
 # Free and open-source media player
 cask "iina"
 # Menu bar manager
 cask "jordanbaird-ice@beta"
-# Electronics design automation suite
-cask "kicad"
 # Audio tagger focusing on efficiency
 cask "kid3"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
 # Open-source software for live streaming and screen recording
 cask "obs"
-# Verify system files structure, run miscellaneous maintenance and more
-cask "onyx"
 # Monitors computer mic and webcam
 cask "oversight"
 # Minecraft launcher
