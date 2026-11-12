@@ -28,6 +28,5 @@
   "trouble.nvim": { "branch": "main", "commit": "bd67efe408d4816e25e8491cc5ad4088e708a69a" },
   "vim-matchup": { "branch": "master", "commit": "5e3c4a3274a9766aee520caebb52572c007fc4f8" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },
-  "vimtex": { "branch": "master", "commit": "c1b96604d9a387cde5a98bec8f6687ae3078b571" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }
