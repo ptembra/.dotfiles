@@ -99,6 +99,7 @@ brew "symlinks"
 brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
+brew "tree-sitter-cli"
 # Automatic workarounds for problems in Wine
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
