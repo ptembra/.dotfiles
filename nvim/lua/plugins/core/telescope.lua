@@ -1,5 +1,6 @@
 return {
   'nvim-telescope/telescope.nvim', version = '*', -- latest release
+  cmd = 'Telescope', -- loads on first :Telescope (or require('telescope...'))
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
