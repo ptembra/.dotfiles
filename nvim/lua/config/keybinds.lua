@@ -29,7 +29,6 @@ wk.add({
   { "<leader>tk", "<cmd>Telescope keymaps<cr>",     desc = "Search keymaps",               nowait = true, remap = false },
   { "<leader>tr", "<cmd>Telescope oldfiles<cr>",    desc = "Search recently opened files", nowait = true, remap = false },
   { "<leader>ts", "<cmd>Telescope grep_string<cr>", desc = "Search with grep",             nowait = true, remap = false },
-  { "<leader>ps", "<cmd>Telescope find_files<cr>",  desc = "[P]ath [S]earch",              nowait = true, remap = false },
 })
 
 
@@ -40,7 +39,6 @@ wk.add({
   { "<leader>bW",    "<cmd>w<cr>",        desc = "Save file",          nowait = true, remap = false },
   { "<leader>b[",    "<cmd>bprev<cr>",    desc = "Previous buffer",    nowait = true, remap = false },
   { "<leader>b]",    "<cmd>bnext<cr>",    desc = "Next buffer",        nowait = true, remap = false },
-  { "<leader>bq",    "<cmd>q!<cr>",       desc = "Force close buffer", nowait = true, remap = false },
   {
     "<leader>q",
     function()
@@ -110,7 +108,6 @@ wk.add({
   { "<leader>dl", "<cmd>Trouble loclist toggle <cr>",              desc = "Loclist" },
   { "<leader>dq", "<cmd>Trouble qflist toggle<cr>",                desc = "Quickfix" },
   { "<leader>dr", "<cmd>Trouble lsp_references toggle<cr>",        desc = "References" },
-  { "<leader>dw", "<cmd>Trouble workspace_diagnostics toggle<cr>", desc = "Workspace Diagnostics" },
 })
 
 -- CLAUDE

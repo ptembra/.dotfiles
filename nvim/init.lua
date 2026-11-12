@@ -50,8 +50,8 @@ vim.diagnostic.config({
     format = function(diag)
       return string.format("%s: %s", diag.source, diag.message)
     end,
-    update_in_insert = false,
-  }
+  },
+  update_in_insert = false,
 })
 
 -- [[ lazy.nvim ]]
