@@ -17,6 +17,7 @@ return {
 			group = vim.api.nvim_create_augroup("pedro_treesitter", { clear = true }),
 			callback = function(ev)
 				pcall(vim.treesitter.start, ev.buf)
+				-- php indent: after/indent/php.lua (php_template_indent)
 			end,
 		})
 	end,
